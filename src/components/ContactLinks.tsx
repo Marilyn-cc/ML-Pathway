@@ -62,7 +62,7 @@ export default function ContactLinks({
           target={key === "email" ? undefined : "_blank"}
           rel={key === "email" ? undefined : "noopener noreferrer"}
           aria-label={label}
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 text-gray-500 hover:border-brand/30 hover:text-brand hover:bg-brand/5 transition-colors"
+          className="flex h-8 w-8 items-center justify-center rounded-full border border-gray-200 dark:border-gray-700 text-gray-500 dark:text-gray-400 hover:border-brand/30 hover:text-brand hover:bg-brand/5 transition-colors"
         >
           <Icon size={size} />
         </a>
