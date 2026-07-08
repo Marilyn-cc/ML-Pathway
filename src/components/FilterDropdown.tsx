@@ -39,29 +39,29 @@ export default function FilterDropdown({
         className={`flex items-center gap-2 rounded-lg border px-3.5 py-2 text-sm transition-colors ${
           value
             ? "border-brand/30 bg-brand/5 text-brand"
-            : "border-gray-200 text-gray-600 hover:bg-gray-50"
+            : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
         }`}
       >
         {value ?? label}
         <ChevronDown
           size={14}
-          className={value ? "text-brand" : "text-gray-400"}
+          className={value ? "text-brand" : "text-gray-400 dark:text-gray-500"}
         />
       </button>
 
       {open && (
-        <div className="absolute z-20 mt-1.5 w-56 max-h-72 overflow-y-auto rounded-lg border border-gray-100 bg-white py-1.5 shadow-lg">
+        <div className="absolute z-20 mt-1.5 w-56 max-h-72 overflow-y-auto rounded-lg border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 py-1.5 shadow-lg">
           <button
             onClick={() => {
               onChange(null);
               setOpen(false);
             }}
-            className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-gray-600 hover:bg-gray-50"
+            className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
           >
             {allLabel}
             {!value && <Check size={14} className="text-brand" />}
           </button>
-          <div className="my-1 h-px bg-gray-100" />
+          <div className="my-1 h-px bg-gray-100 dark:bg-gray-800" />
           {options.map((opt) => (
             <button
               key={opt}
@@ -69,7 +69,7 @@ export default function FilterDropdown({
                 onChange(opt);
                 setOpen(false);
               }}
-              className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-gray-600 hover:bg-gray-50"
+              className="flex w-full items-center justify-between px-3.5 py-2 text-left text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800"
             >
               {opt}
               {value === opt && <Check size={14} className="text-brand" />}

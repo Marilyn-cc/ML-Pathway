@@ -3,15 +3,15 @@
 // Leave any field as "" (empty string) to hide that link/row entirely.
 
 export const CREATOR = {
-  name: "Maryline Chekwemoi",
+  name: "Your Name",
   title: "Creator & Developer",
   // Short line shown in the footer only. Leave "" to omit.
   tagline: "Building ML Pathway to make machine learning click.",
 
   // Contact links — leave any of these "" to hide that icon/link.
-  email: "chekwemoi.merrylyn@strathmore.edu",
-  github: "https://github.com/Marilyn.cc",
+  email: "you@example.com",
+  github: "https://github.com/your-username",
   linkedin: "https://linkedin.com/in/your-username",
-  website: "https://marylinedatadev.vercel.app/",
-  x: "",
+  x: "https://x.com/your-handle",
+  website: "https://your-site.com",
 };

@@ -1,5 +1,5 @@
 "use client";
-// resources/page.tsx
+
 import { useMemo, useState } from "react";
 import Sidebar from "@/components/Sidebar";
 import TopBar from "@/components/TopBar";
@@ -20,30 +20,25 @@ type ResourceType = "Cheat Sheet" | "Research Paper" | "Blog";
 
 const TYPE_META: Record<
   ResourceType,
-  {
-    icon: typeof ClipboardList;
-    iconBg: string;
-    iconColor: string;
-    badge: string;
-  }
+  { icon: typeof ClipboardList; iconBg: string; iconColor: string; badge: string }
 > = {
   "Cheat Sheet": {
     icon: ClipboardList,
-    iconBg: "bg-emerald-50",
-    iconColor: "text-emerald-600",
-    badge: "text-emerald-600",
+    iconBg: "bg-emerald-50 dark:bg-emerald-500/10",
+    iconColor: "text-emerald-600 dark:text-emerald-400",
+    badge: "text-emerald-600 dark:text-emerald-400",
   },
   "Research Paper": {
     icon: GraduationCap,
-    iconBg: "bg-violet-50",
-    iconColor: "text-violet-600",
-    badge: "text-violet-600",
+    iconBg: "bg-violet-50 dark:bg-violet-500/10",
+    iconColor: "text-violet-600 dark:text-violet-400",
+    badge: "text-violet-600 dark:text-violet-400",
   },
   Blog: {
     icon: Newspaper,
-    iconBg: "bg-blue-50",
-    iconColor: "text-blue-600",
-    badge: "text-blue-600",
+    iconBg: "bg-blue-50 dark:bg-blue-500/10",
+    iconColor: "text-blue-600 dark:text-blue-400",
+    badge: "text-blue-600 dark:text-blue-400",
   },
 };
 
@@ -63,8 +58,7 @@ const RESOURCES: {
   {
     type: "Cheat Sheet",
     title: "Matplotlib Cheat Sheet",
-    description:
-      "Plot anatomy, plotting routines, styling, and layout in one page.",
+    description: "Plot anatomy, plotting routines, styling, and layout in one page.",
     source: "ML Pathway",
     url: "/cheatsheets/matplotlib-cheatsheet.pdf",
     tags: ["Matplotlib", "Visualization"],
@@ -72,8 +66,7 @@ const RESOURCES: {
   {
     type: "Cheat Sheet",
     title: "Scikit-Learn Cheat Sheet",
-    description:
-      "Preprocessing, model fitting, evaluation, and tuning at a glance.",
+    description: "Preprocessing, model fitting, evaluation, and tuning at a glance.",
     source: "ML Pathway",
     url: "/cheatsheets/scikit-learn-cheatsheet.pdf",
     tags: ["Scikit-learn", "Model Selection"],
@@ -97,8 +90,7 @@ const RESOURCES: {
   {
     type: "Research Paper",
     title: "Deep Residual Learning for Image Recognition",
-    description:
-      "Introduces ResNet and residual connections for very deep networks.",
+    description: "Introduces ResNet and residual connections for very deep networks.",
     source: "arXiv",
     url: "https://arxiv.org/abs/1512.03385",
     tags: ["Deep Learning", "Computer Vision"],
@@ -106,8 +98,7 @@ const RESOURCES: {
   {
     type: "Research Paper",
     title: "Adam: A Method for Stochastic Optimization",
-    description:
-      "The optimizer behind most modern deep learning training runs.",
+    description: "The optimizer behind most modern deep learning training runs.",
     source: "arXiv",
     url: "https://arxiv.org/abs/1412.6980",
     tags: ["Optimization", "Deep Learning"],
@@ -123,8 +114,7 @@ const RESOURCES: {
   {
     type: "Blog",
     title: "A Recipe for Training Neural Networks",
-    description:
-      "Practical, hard-won advice for actually getting models to train.",
+    description: "Practical, hard-won advice for actually getting models to train.",
     source: "Andrej Karpathy",
     url: "http://karpathy.github.io/2019/04/25/recipe/",
     tags: ["Deep Learning", "Best Practices"],
@@ -132,20 +122,10 @@ const RESOURCES: {
   {
     type: "Blog",
     title: "Distill.pub Archive",
-    description:
-      "Interactive, visual explanations of machine learning research.",
+    description: "Interactive, visual explanations of machine learning research.",
     source: "Distill",
     url: "https://distill.pub/",
     tags: ["Deep Learning", "Visualization"],
-  },
-  {
-    type: "Cheat Sheet",
-    title: "Hugging Face Cheat Sheet",
-    description:
-      "Working with pre-trained models and pipelines in Hugging Face.",
-    source: "ML Pathway",
-    url: "/cheatsheets/hugging-face.pdf",
-    tags: ["Hugging Face", "NLP"],
   },
 ];
 
@@ -158,7 +138,6 @@ const TAGS = [
   "Deep Learning",
   "NLP",
   "Computer Vision",
-  "Hugging Face",
 ];
 const TOPICS = Array.from(new Set(RESOURCES.flatMap((r) => r.tags))).sort();
 const TABS = ["All Resources", "Cheat Sheets", "Research Papers", "Blogs"];
@@ -206,12 +185,11 @@ export default function ResourcesPage() {
     setTopicFilter(null);
   }
 
-  const hasActiveFilters =
-    query || activeTab !== "All Resources" || topicFilter;
+  const hasActiveFilters = query || activeTab !== "All Resources" || topicFilter;
 
   return (
-    <div className="flex min-h-screen bg-[#FAFAFB]">
-      <Sidebar active="Resources" />
+    <div className="flex min-h-screen bg-[#FAFAFB] dark:bg-gray-950">
+      <Sidebar active="Resources" promo="learning" />
 
       <div className="flex-1 flex flex-col min-w-0">
         <TopBar
@@ -224,30 +202,30 @@ export default function ResourcesPage() {
           {/* Header */}
           <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-8">
             <div>
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-50 mb-2">
                 Resources
               </h1>
-              <p className="text-[15px] text-gray-500">
+              <p className="text-[15px] text-gray-500 dark:text-gray-400">
                 Cheat sheets, research papers, and blogs to deepen your ML
                 knowledge.
               </p>
             </div>
-            <div className="flex items-center gap-4 rounded-xl border border-gray-100 bg-white px-5 py-4 shrink-0">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand/10 text-brand">
+            <div className="flex items-center gap-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-5 py-4 shrink-0">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand/10 dark:bg-brand/20 text-brand">
                 <Compass size={18} />
               </div>
               <div>
-                <p className="text-sm text-gray-500">Total Resources</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">Total Resources</p>
                 <p className="text-2xl font-bold text-brand leading-tight">
                   {RESOURCES.length}
                 </p>
-                <p className="text-xs text-gray-400">Across all topics</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500">Across all topics</p>
               </div>
             </div>
           </div>
 
           {/* Search + filters */}
-          <div className="rounded-xl border border-gray-100 bg-white p-5 mb-6">
+          <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 mb-6">
             <div className="relative mb-4">
               <Search
                 size={17}
@@ -258,7 +236,7 @@ export default function ResourcesPage() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search resources..."
-                className="w-full rounded-lg border border-gray-200 bg-white py-2.5 pl-11 pr-4 text-sm text-gray-700 placeholder:text-gray-400 outline-none focus:border-brand/40 focus:ring-4 focus:ring-brand/10"
+                className="w-full rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 py-2.5 pl-11 pr-4 text-sm text-gray-700 dark:text-gray-200 placeholder:text-gray-400 dark:placeholder:text-gray-500 outline-none focus:border-brand/40 focus:ring-4 focus:ring-brand/10"
               />
             </div>
 
@@ -269,9 +247,7 @@ export default function ResourcesPage() {
                 options={FILTERS_TYPE_OPTIONS}
                 value={TAB_TYPE[activeTab]}
                 onChange={(v) =>
-                  setActiveTab(
-                    v ? TYPE_TAB[v as ResourceType] : "All Resources",
-                  )
+                  setActiveTab(v ? TYPE_TAB[v as ResourceType] : "All Resources")
                 }
               />
               <FilterDropdown
@@ -300,7 +276,7 @@ export default function ResourcesPage() {
                   className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
                     query.toLowerCase() === tag.toLowerCase()
                       ? "border-brand/30 bg-brand/5 text-brand"
-                      : "border-gray-200 text-gray-600 hover:border-brand/30 hover:text-brand hover:bg-brand/5"
+                      : "border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 hover:border-brand/30 hover:text-brand hover:bg-brand/5"
                   }`}
                 >
                   {tag}
@@ -311,7 +287,7 @@ export default function ResourcesPage() {
 
           {/* Tabs + view controls */}
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-5">
-            <div className="flex items-center gap-6 border-b border-gray-100 sm:border-none">
+            <div className="flex items-center gap-6 border-b border-gray-100 dark:border-gray-800 sm:border-none">
               {TABS.map((tab) => (
                 <button
                   key={tab}
@@ -319,7 +295,7 @@ export default function ResourcesPage() {
                   className={`relative pb-3 sm:pb-0 text-sm font-medium ${
                     activeTab === tab
                       ? "text-brand"
-                      : "text-gray-500 hover:text-gray-800"
+                      : "text-gray-500 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-100"
                   }`}
                 >
                   {tab}
@@ -329,13 +305,13 @@ export default function ResourcesPage() {
                 </button>
               ))}
             </div>
-            <div className="flex items-center gap-1 rounded-lg border border-gray-200 p-1 w-fit">
+            <div className="flex items-center gap-1 rounded-lg border border-gray-200 dark:border-gray-700 p-1 w-fit">
               <button
                 onClick={() => setViewMode("grid")}
                 className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium ${
                   viewMode === "grid"
-                    ? "bg-brand/10 text-brand"
-                    : "text-gray-500 hover:bg-gray-50"
+                    ? "bg-brand/10 dark:bg-brand/20 text-brand"
+                    : "text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                 }`}
               >
                 <LayoutGrid size={15} />
@@ -345,8 +321,8 @@ export default function ResourcesPage() {
                 onClick={() => setViewMode("list")}
                 className={`flex items-center gap-1.5 rounded-md px-3 py-1.5 text-sm font-medium ${
                   viewMode === "list"
-                    ? "bg-brand/10 text-brand"
-                    : "text-gray-500 hover:bg-gray-50"
+                    ? "bg-brand/10 dark:bg-brand/20 text-brand"
+                    : "text-gray-500 dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800"
                 }`}
               >
                 <List size={15} />
@@ -357,9 +333,9 @@ export default function ResourcesPage() {
 
           {/* Resource grid / list */}
           {filtered.length === 0 ? (
-            <div className="rounded-xl border border-gray-100 bg-white p-12 text-center text-sm text-gray-500">
-              No resources match &quot;{query}&quot;. Try a different search or
-              clear the filter.
+            <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-12 text-center text-sm text-gray-500 dark:text-gray-400">
+              No resources match &quot;{query}&quot;. Try a different search
+              or clear the filter.
             </div>
           ) : viewMode === "grid" ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">
@@ -368,7 +344,7 @@ export default function ResourcesPage() {
                 return (
                   <div
                     key={resource.title}
-                    className="flex flex-col rounded-xl border border-gray-100 bg-white p-5 hover:border-gray-200 hover:shadow-sm transition-all"
+                    className="flex flex-col rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-sm transition-all"
                   >
                     <div className="flex items-start justify-between mb-3">
                       <div
@@ -378,7 +354,7 @@ export default function ResourcesPage() {
                       </div>
                       <button
                         aria-label="Save resource"
-                        className="text-gray-300 hover:text-brand"
+                        className="text-gray-300 dark:text-gray-600 hover:text-brand"
                       >
                         <Bookmark size={17} />
                       </button>
@@ -387,10 +363,10 @@ export default function ResourcesPage() {
                     <p className={`text-xs font-medium mb-1 ${meta.badge}`}>
                       {resource.type}
                     </p>
-                    <h3 className="text-[15px] font-semibold text-gray-900 mb-1.5 leading-snug">
+                    <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100 mb-1.5 leading-snug">
                       {resource.title}
                     </h3>
-                    <p className="text-[13px] leading-relaxed text-gray-500 mb-4 flex-1">
+                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400 mb-4 flex-1">
                       {resource.description}
                     </p>
 
@@ -398,15 +374,15 @@ export default function ResourcesPage() {
                       {resource.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-500"
+                          className="rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-[11px] font-medium text-gray-500 dark:text-gray-400"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <div className="flex items-center justify-between pt-3 border-t border-gray-50">
-                      <span className="text-xs text-gray-400">
+                    <div className="flex items-center justify-between pt-3 border-t border-gray-50 dark:border-gray-800">
+                      <span className="text-xs text-gray-400 dark:text-gray-500">
                         {resource.source}
                       </span>
                       <a
@@ -424,7 +400,7 @@ export default function ResourcesPage() {
               })}
             </div>
           ) : (
-            <div className="flex flex-col rounded-xl border border-gray-100 bg-white divide-y divide-gray-50 mb-8">
+            <div className="flex flex-col rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 divide-y divide-gray-50 dark:divide-gray-800 mb-8">
               {filtered.map((resource) => {
                 const meta = TYPE_META[resource.type];
                 return (
@@ -442,10 +418,10 @@ export default function ResourcesPage() {
                       <p className={`text-xs font-medium ${meta.badge}`}>
                         {resource.type}
                       </p>
-                      <h3 className="text-[15px] font-semibold text-gray-900 leading-snug">
+                      <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100 leading-snug">
                         {resource.title}
                       </h3>
-                      <p className="text-[13px] text-gray-500 truncate">
+                      <p className="text-[13px] text-gray-500 dark:text-gray-400 truncate">
                         {resource.description}
                       </p>
                     </div>
@@ -454,7 +430,7 @@ export default function ResourcesPage() {
                       {resource.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-gray-100 px-2.5 py-1 text-[11px] font-medium text-gray-500"
+                          className="rounded-full bg-gray-100 dark:bg-gray-800 px-2.5 py-1 text-[11px] font-medium text-gray-500 dark:text-gray-400"
                         >
                           {tag}
                         </span>
@@ -462,7 +438,7 @@ export default function ResourcesPage() {
                     </div>
 
                     <div className="flex items-center gap-4 shrink-0">
-                      <span className="text-xs text-gray-400">
+                      <span className="text-xs text-gray-400 dark:text-gray-500">
                         {resource.source}
                       </span>
                       <a
@@ -476,7 +452,7 @@ export default function ResourcesPage() {
                       </a>
                       <button
                         aria-label="Save resource"
-                        className="text-gray-300 hover:text-brand"
+                        className="text-gray-300 dark:text-gray-600 hover:text-brand"
                       >
                         <Bookmark size={17} />
                       </button>
