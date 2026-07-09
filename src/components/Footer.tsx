@@ -4,7 +4,6 @@ import { CREATOR } from "@/lib/creator-config";
 
 const FOOTER_LINKS = [
   { href: "/", label: "Home" },
-  { href: "/learn", label: "Learn" },
   { href: "/practice", label: "Practice" },
   { href: "/resources", label: "Resources" },
   { href: "/about", label: "About" },
