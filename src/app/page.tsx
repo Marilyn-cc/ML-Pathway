@@ -77,7 +77,7 @@ const RESOURCES = [
   },
   {
     type: "Guide",
-    title: "ML Roadmap 2024",
+    title: "ML Roadmap 2026",
     icon: PenLine,
     iconBg: "bg-blue-50 dark:bg-blue-500/10",
     iconColor: "text-blue-600 dark:text-blue-400",
@@ -124,10 +124,13 @@ export default function HomePage() {
                   help you build ML skills from the ground up.
                 </p>
                 <div className="mt-7 flex items-center gap-3">
-                  <button className="flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark">
-                    Start Learning
+                  <Link
+                    href="/practice"
+                    className="flex items-center gap-2 rounded-lg bg-brand px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-brand-dark"
+                  >
+                    Start
                     <ArrowRight size={16} />
-                  </button>
+                  </Link>
                   <a
                     href="https://roadmap.sh/machine-learning"
                     target="_blank"
@@ -227,10 +230,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900 dark:text-gray-100">
-                    Learn by coding.
-                  </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">
-                    Practice with interactive exercises and mini-projects.
+                    Start Now
                   </p>
                 </div>
               </div>
