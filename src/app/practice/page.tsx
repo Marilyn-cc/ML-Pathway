@@ -34,18 +34,26 @@ import { githubUrl, colabUrl } from "@/lib/notebooks-config";
 const NOTEBOOKS = [
   {
     title: "Advanced Dimensionality Reduction — Examples",
-    description: "Worked examples of PCA, t-SNE, and other reduction techniques.",
+    description:
+      "Worked examples of PCA, t-SNE, and other reduction techniques.",
     file: "Advanced_dimensionality_reduction_techniques_examples.ipynb",
-    tags: [{ label: "Advanced", color: "rose" }, { label: "Dimensionality Reduction", color: "gray" }],
+    tags: [
+      { label: "Advanced", color: "rose" },
+      { label: "Dimensionality Reduction", color: "gray" },
+    ],
     icon: Layers,
     iconBg: "bg-violet-50 dark:bg-violet-500/10",
     iconColor: "text-violet-600 dark:text-violet-400",
   },
   {
     title: "Advanced Dimensionality Reduction — Exercises",
-    description: "Practice exercises to apply dimensionality reduction yourself.",
+    description:
+      "Practice exercises to apply dimensionality reduction yourself.",
     file: "Advanced_dimensionality_reduction_techniques_exercise.ipynb",
-    tags: [{ label: "Advanced", color: "rose" }, { label: "Dimensionality Reduction", color: "gray" }],
+    tags: [
+      { label: "Advanced", color: "rose" },
+      { label: "Dimensionality Reduction", color: "gray" },
+    ],
     icon: Layers,
     iconBg: "bg-indigo-50 dark:bg-indigo-500/10",
     iconColor: "text-indigo-600 dark:text-indigo-400",
@@ -54,7 +62,10 @@ const NOTEBOOKS = [
     title: "Decision Trees",
     description: "Build and interpret decision tree models from scratch.",
     file: "Decision_trees.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Trees", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Trees", color: "gray" },
+    ],
     icon: TreePine,
     iconBg: "bg-emerald-50 dark:bg-emerald-500/10",
     iconColor: "text-emerald-600 dark:text-emerald-400",
@@ -63,7 +74,10 @@ const NOTEBOOKS = [
     title: "Ensemble Methods",
     description: "Combine multiple models with bagging and boosting.",
     file: "Ensemble_methods_exercise.ipynb",
-    tags: [{ label: "Advanced", color: "rose" }, { label: "Ensemble", color: "gray" }],
+    tags: [
+      { label: "Advanced", color: "rose" },
+      { label: "Ensemble", color: "gray" },
+    ],
     icon: Workflow,
     iconBg: "bg-amber-50 dark:bg-amber-500/10",
     iconColor: "text-amber-600 dark:text-amber-400",
@@ -72,7 +86,10 @@ const NOTEBOOKS = [
     title: "Hierarchical Clustering",
     description: "Group data points into nested clusters step by step.",
     file: "Hierarchical_clustering_example.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Clustering", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Clustering", color: "gray" },
+    ],
     icon: GitFork,
     iconBg: "bg-blue-50 dark:bg-blue-500/10",
     iconColor: "text-blue-600 dark:text-blue-400",
@@ -81,7 +98,10 @@ const NOTEBOOKS = [
     title: "Hyperparameters & Model Validation",
     description: "Tune models properly and validate results with confidence.",
     file: "Hyperparameters_and_model_validation_examples.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Model Validation", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Model Validation", color: "gray" },
+    ],
     icon: SlidersHorizontal,
     iconBg: "bg-teal-50 dark:bg-teal-500/10",
     iconColor: "text-teal-600 dark:text-teal-400",
@@ -90,7 +110,10 @@ const NOTEBOOKS = [
     title: "KNN & Naive Bayes",
     description: "Two classic classifiers, explained and implemented.",
     file: "KNN_and_Naive_Bayes_examples.ipynb",
-    tags: [{ label: "Beginner", color: "emerald" }, { label: "Classification", color: "gray" }],
+    tags: [
+      { label: "Beginner", color: "emerald" },
+      { label: "Classification", color: "gray" },
+    ],
     icon: Target,
     iconBg: "bg-emerald-50 dark:bg-emerald-500/10",
     iconColor: "text-emerald-600 dark:text-emerald-400",
@@ -99,7 +122,10 @@ const NOTEBOOKS = [
     title: "Least Squares Regression",
     description: "Fit a regression line the classic way, from the math up.",
     file: "Least_Squares_Regression_Examples.ipynb",
-    tags: [{ label: "Beginner", color: "emerald" }, { label: "Regression", color: "gray" }],
+    tags: [
+      { label: "Beginner", color: "emerald" },
+      { label: "Regression", color: "gray" },
+    ],
     icon: TrendingUp,
     iconBg: "bg-blue-50 dark:bg-blue-500/10",
     iconColor: "text-blue-600 dark:text-blue-400",
@@ -108,7 +134,10 @@ const NOTEBOOKS = [
     title: "Neural Network Classifiers",
     description: "Train your first neural network classifier end to end.",
     file: "Neural_network_classifiers_examples.ipynb",
-    tags: [{ label: "Advanced", color: "rose" }, { label: "Neural Networks", color: "gray" }],
+    tags: [
+      { label: "Advanced", color: "rose" },
+      { label: "Neural Networks", color: "gray" },
+    ],
     icon: BrainCircuit,
     iconBg: "bg-violet-50 dark:bg-violet-500/10",
     iconColor: "text-violet-600 dark:text-violet-400",
@@ -117,7 +146,10 @@ const NOTEBOOKS = [
     title: "Regularisation: LASSO",
     description: "Shrink coefficients and select features with L1 penalties.",
     file: "Regularisation_LASSO_examples.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Regularisation", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Regularisation", color: "gray" },
+    ],
     icon: Filter,
     iconBg: "bg-rose-50 dark:bg-rose-500/10",
     iconColor: "text-rose-600 dark:text-rose-400",
@@ -126,7 +158,10 @@ const NOTEBOOKS = [
     title: "Regularisation: Ridge",
     description: "Control overfitting with L2 penalty regularisation.",
     file: "Regularisation_ridge_examples.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Regularisation", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Regularisation", color: "gray" },
+    ],
     icon: Filter,
     iconBg: "bg-orange-50 dark:bg-orange-500/10",
     iconColor: "text-orange-600 dark:text-orange-400",
@@ -135,7 +170,10 @@ const NOTEBOOKS = [
     title: "Data Mining",
     description: "Core data mining workflows and pattern discovery.",
     file: "data_mining.ipynb",
-    tags: [{ label: "Intermediate", color: "amber" }, { label: "Data Mining", color: "gray" }],
+    tags: [
+      { label: "Intermediate", color: "amber" },
+      { label: "Data Mining", color: "gray" },
+    ],
     icon: Pickaxe,
     iconBg: "bg-amber-50 dark:bg-amber-500/10",
     iconColor: "text-amber-600 dark:text-amber-400",
@@ -144,7 +182,10 @@ const NOTEBOOKS = [
     title: "SVM & Model Tuning",
     description: "Support vector machines plus practical tuning tips.",
     file: "support_vector_machines_and_model_tuning_example.ipynb",
-    tags: [{ label: "Advanced", color: "rose" }, { label: "SVM", color: "gray" }],
+    tags: [
+      { label: "Advanced", color: "rose" },
+      { label: "SVM", color: "gray" },
+    ],
     icon: SeparatorVertical,
     iconBg: "bg-indigo-50 dark:bg-indigo-500/10",
     iconColor: "text-indigo-600 dark:text-indigo-400",
@@ -155,9 +196,9 @@ const LEVELS = ["Beginner", "Intermediate", "Advanced"];
 const TOPICS = Array.from(
   new Set(
     NOTEBOOKS.flatMap((nb) =>
-      nb.tags.filter((t) => !LEVELS.includes(t.label)).map((t) => t.label)
-    )
-  )
+      nb.tags.filter((t) => !LEVELS.includes(t.label)).map((t) => t.label),
+    ),
+  ),
 );
 const LANGUAGES = ["Python"]; // every notebook is Python today — kept for future non-Python notebooks
 
@@ -179,7 +220,8 @@ function getFormat(nb: (typeof NOTEBOOKS)[number]) {
 }
 
 const TAG_COLORS: Record<string, string> = {
-  emerald: "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  emerald:
+    "bg-emerald-50 dark:bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
   amber: "bg-amber-50 dark:bg-amber-500/10 text-amber-600 dark:text-amber-400",
   rose: "bg-rose-50 dark:bg-rose-500/10 text-rose-600 dark:text-rose-400",
   gray: "bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400",
@@ -187,7 +229,7 @@ const TAG_COLORS: Record<string, string> = {
 
 function getLevel(nb: (typeof NOTEBOOKS)[number]) {
   return nb.tags.find((t) =>
-    ["Beginner", "Intermediate", "Advanced"].includes(t.label)
+    ["Beginner", "Intermediate", "Advanced"].includes(t.label),
   )?.label;
 }
 
@@ -249,7 +291,7 @@ function PracticeContent() {
 
   return (
     <div className="flex min-h-screen bg-[#FAFAFB] dark:bg-gray-950">
-      <Sidebar active="Practice" promo="practicing" />
+      <Sidebar active="Practice" />
 
       <div className="flex-1 flex flex-col min-w-0">
         <TopBar
@@ -278,11 +320,15 @@ function PracticeContent() {
                 <FileStack size={18} />
               </div>
               <div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Total Notebooks</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Total Notebooks
+                </p>
                 <p className="text-2xl font-bold text-brand leading-tight">
                   {NOTEBOOKS.length}
                 </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500">Across all topics</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500">
+                  Across all topics
+                </p>
               </div>
             </div>
           </div>
@@ -409,8 +455,8 @@ function PracticeContent() {
           {/* Notebook grid / list */}
           {filtered.length === 0 ? (
             <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-12 text-center text-sm text-gray-500 dark:text-gray-400">
-              No notebooks match &quot;{query}&quot;. Try a different search
-              or clear the filter.
+              No notebooks match &quot;{query}&quot;. Try a different search or
+              clear the filter.
             </div>
           ) : viewMode === "grid" ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">

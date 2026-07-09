@@ -16,7 +16,6 @@ import CreatorCard from "@/components/CreatorCard";
 
 const NAV_ITEMS = [
   { href: "/", label: "Home", icon: Home },
-  { href: "/learn", label: "Learn", icon: Bookmark },
   { href: "/practice", label: "Practice", icon: Code2 },
   { href: "/resources", label: "Resources", icon: FileText },
   {
@@ -25,13 +24,10 @@ const NAV_ITEMS = [
     icon: BookOpen,
     external: true,
   },
-  { href: "/progress", label: "Progress", icon: TrendingUp },
 ];
 
 type SidebarProps = {
   active: string;
-  /** Which promo card to show at the bottom of the sidebar */
-  promo?: "learning" | "practicing";
 };
 
 // Text/labels fade + reveal only once the sidebar has grown wide enough that
@@ -40,16 +36,14 @@ type SidebarProps = {
 const LABEL_CLASS =
   "whitespace-nowrap opacity-0 -translate-x-1 transition-all duration-150 group-hover:opacity-100 group-hover:translate-x-0";
 
-export default function Sidebar({ active, promo = "learning" }: SidebarProps) {
+export default function Sidebar({ active }: SidebarProps) {
   return (
     <>
       {/* Spacer: reserves the collapsed-rail width in the page's flex layout
           so main content doesn't sit underneath the fixed sidebar below. */}
       <div className="hidden lg:block w-20 shrink-0" />
 
-      <aside
-        className="group hidden lg:flex fixed inset-y-0 left-0 z-30 w-20 hover:w-64 flex-col justify-between overflow-hidden border-r border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-4 py-6 shadow-none hover:shadow-xl transition-[width,box-shadow] duration-200 ease-out"
-      >
+      <aside className="group hidden lg:flex fixed inset-y-0 left-0 z-30 w-20 hover:w-64 flex-col justify-between overflow-hidden border-r border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-950 px-4 py-6 shadow-none hover:shadow-xl transition-[width,box-shadow] duration-200 ease-out">
         <div>
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 px-2 mb-8">
@@ -112,38 +106,9 @@ export default function Sidebar({ active, promo = "learning" }: SidebarProps) {
           </nav>
         </div>
 
-        {/* Bottom: promo card + creator contact card — only shown expanded,
-            since they're built around full-width text and don't have a
-            meaningful icon-only collapsed state. */}
-        <div
-          className={`flex flex-col gap-3 shrink-0 ${LABEL_CLASS}`}
-        >
-          {promo === "learning" ? (
-            <div className="rounded-xl bg-brand/[0.06] dark:bg-brand/[0.12] p-4">
-              <Sparkles size={18} className="text-brand mb-2" strokeWidth={2} />
-              <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                Focus on learning.
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400">We&apos;ll guide the way.</p>
-            </div>
-          ) : (
-            <div className="rounded-xl bg-brand/[0.06] dark:bg-brand/[0.12] p-4">
-              <Sparkles size={18} className="text-brand mb-2" strokeWidth={2} />
-              <p className="text-sm font-semibold text-gray-900 dark:text-gray-100">
-                Keep practicing!
-              </p>
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-3">
-                Consistency builds real skills.
-              </p>
-              <div className="flex items-center gap-1 text-xs font-medium text-gray-700 dark:text-gray-300 mb-2">
-                3 day streak <Flame size={14} className="text-orange-500" />
-              </div>
-              <div className="h-1.5 w-full rounded-full bg-gray-200 dark:bg-gray-700 overflow-hidden">
-                <div className="h-full w-2/5 rounded-full bg-brand" />
-              </div>
-            </div>
-          )}
-
+        {/* Bottom: creator contact card — only shown expanded.
+            built around full-width text and does not show in collapsed state. */}
+        <div className={`flex flex-col gap-3 shrink-0 ${LABEL_CLASS}`}>
           <CreatorCard />
         </div>
       </aside>

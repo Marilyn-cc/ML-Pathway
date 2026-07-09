@@ -20,7 +20,12 @@ type ResourceType = "Cheat Sheet" | "Research Paper" | "Blog";
 
 const TYPE_META: Record<
   ResourceType,
-  { icon: typeof ClipboardList; iconBg: string; iconColor: string; badge: string }
+  {
+    icon: typeof ClipboardList;
+    iconBg: string;
+    iconColor: string;
+    badge: string;
+  }
 > = {
   "Cheat Sheet": {
     icon: ClipboardList,
@@ -58,7 +63,8 @@ const RESOURCES: {
   {
     type: "Cheat Sheet",
     title: "Matplotlib Cheat Sheet",
-    description: "Plot anatomy, plotting routines, styling, and layout in one page.",
+    description:
+      "Plot anatomy, plotting routines, styling, and layout in one page.",
     source: "ML Pathway",
     url: "/cheatsheets/matplotlib-cheatsheet.pdf",
     tags: ["Matplotlib", "Visualization"],
@@ -66,7 +72,8 @@ const RESOURCES: {
   {
     type: "Cheat Sheet",
     title: "Scikit-Learn Cheat Sheet",
-    description: "Preprocessing, model fitting, evaluation, and tuning at a glance.",
+    description:
+      "Preprocessing, model fitting, evaluation, and tuning at a glance.",
     source: "ML Pathway",
     url: "/cheatsheets/scikit-learn-cheatsheet.pdf",
     tags: ["Scikit-learn", "Model Selection"],
@@ -90,7 +97,8 @@ const RESOURCES: {
   {
     type: "Research Paper",
     title: "Deep Residual Learning for Image Recognition",
-    description: "Introduces ResNet and residual connections for very deep networks.",
+    description:
+      "Introduces ResNet and residual connections for very deep networks.",
     source: "arXiv",
     url: "https://arxiv.org/abs/1512.03385",
     tags: ["Deep Learning", "Computer Vision"],
@@ -98,7 +106,8 @@ const RESOURCES: {
   {
     type: "Research Paper",
     title: "Adam: A Method for Stochastic Optimization",
-    description: "The optimizer behind most modern deep learning training runs.",
+    description:
+      "The optimizer behind most modern deep learning training runs.",
     source: "arXiv",
     url: "https://arxiv.org/abs/1412.6980",
     tags: ["Optimization", "Deep Learning"],
@@ -114,7 +123,8 @@ const RESOURCES: {
   {
     type: "Blog",
     title: "A Recipe for Training Neural Networks",
-    description: "Practical, hard-won advice for actually getting models to train.",
+    description:
+      "Practical, hard-won advice for actually getting models to train.",
     source: "Andrej Karpathy",
     url: "http://karpathy.github.io/2019/04/25/recipe/",
     tags: ["Deep Learning", "Best Practices"],
@@ -122,7 +132,8 @@ const RESOURCES: {
   {
     type: "Blog",
     title: "Distill.pub Archive",
-    description: "Interactive, visual explanations of machine learning research.",
+    description:
+      "Interactive, visual explanations of machine learning research.",
     source: "Distill",
     url: "https://distill.pub/",
     tags: ["Deep Learning", "Visualization"],
@@ -185,11 +196,12 @@ export default function ResourcesPage() {
     setTopicFilter(null);
   }
 
-  const hasActiveFilters = query || activeTab !== "All Resources" || topicFilter;
+  const hasActiveFilters =
+    query || activeTab !== "All Resources" || topicFilter;
 
   return (
     <div className="flex min-h-screen bg-[#FAFAFB] dark:bg-gray-950">
-      <Sidebar active="Resources" promo="learning" />
+      <Sidebar active="Resources" />
 
       <div className="flex-1 flex flex-col min-w-0">
         <TopBar
@@ -215,11 +227,15 @@ export default function ResourcesPage() {
                 <Compass size={18} />
               </div>
               <div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">Total Resources</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Total Resources
+                </p>
                 <p className="text-2xl font-bold text-brand leading-tight">
                   {RESOURCES.length}
                 </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500">Across all topics</p>
+                <p className="text-xs text-gray-400 dark:text-gray-500">
+                  Across all topics
+                </p>
               </div>
             </div>
           </div>
@@ -247,7 +263,9 @@ export default function ResourcesPage() {
                 options={FILTERS_TYPE_OPTIONS}
                 value={TAB_TYPE[activeTab]}
                 onChange={(v) =>
-                  setActiveTab(v ? TYPE_TAB[v as ResourceType] : "All Resources")
+                  setActiveTab(
+                    v ? TYPE_TAB[v as ResourceType] : "All Resources",
+                  )
                 }
               />
               <FilterDropdown
@@ -334,8 +352,8 @@ export default function ResourcesPage() {
           {/* Resource grid / list */}
           {filtered.length === 0 ? (
             <div className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-12 text-center text-sm text-gray-500 dark:text-gray-400">
-              No resources match &quot;{query}&quot;. Try a different search
-              or clear the filter.
+              No resources match &quot;{query}&quot;. Try a different search or
+              clear the filter.
             </div>
           ) : viewMode === "grid" ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-8">

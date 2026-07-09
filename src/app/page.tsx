@@ -104,7 +104,7 @@ const RESOURCES = [
 export default function HomePage() {
   return (
     <div className="flex min-h-screen bg-[#FAFAFB] dark:bg-gray-950">
-      <Sidebar active="Home" promo="learning" />
+      <Sidebar active="Home" />
 
       <div className="flex-1 flex flex-col min-w-0">
         <TopBar mode="search" />
@@ -200,7 +200,7 @@ export default function HomePage() {
                       />
                     </div>
                   </div>
-                )
+                ),
               )}
             </div>
           </section>
@@ -282,9 +282,12 @@ export default function HomePage() {
                         </p>
                       </div>
                     </div>
-                    <ChevronRight size={16} className="text-gray-300 dark:text-gray-600" />
+                    <ChevronRight
+                      size={16}
+                      className="text-gray-300 dark:text-gray-600"
+                    />
                   </Link>
-                )
+                ),
               )}
             </div>
           </section>

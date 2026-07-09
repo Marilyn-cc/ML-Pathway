@@ -35,7 +35,7 @@ const VALUES = [
 export default function AboutPage() {
   return (
     <div className="flex min-h-screen bg-[#FAFAFB] dark:bg-gray-950">
-      <Sidebar active="About" promo="learning" />
+      <Sidebar active="About" />
 
       <div className="flex-1 flex flex-col min-w-0">
         <TopBar mode="breadcrumb" crumbs={[{ label: "About" }]} />
@@ -59,12 +59,12 @@ export default function AboutPage() {
               hard to take the first step.
             </p>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">
-              That&apos;s the whole reason ML Pathway exists.The hardest part of learning
-              was never the math , It was me trying to  figuring out where
-              to click first. So I built what I wish I&apos;d had: a
+              That&apos;s the whole reason ML Pathway exists.The hardest part of
+              learning was never the math , It was me trying to figuring out
+              where to click first. So I built what I wish I&apos;d had: a
               straight line from &quot;I know nothing&quot; to &quot;I just
-              trained my first model,&quot; with real notebooks you can run
-              the moment you land on the page.
+              trained my first model,&quot; with real notebooks you can run the
+              moment you land on the page.
             </p>
           </section>
 
@@ -74,24 +74,26 @@ export default function AboutPage() {
               What I optimize for
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {VALUES.map(({ icon: Icon, iconBg, iconColor, title, description }) => (
-                <div
-                  key={title}
-                  className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5"
-                >
+              {VALUES.map(
+                ({ icon: Icon, iconBg, iconColor, title, description }) => (
                   <div
-                    className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBg} ${iconColor} mb-3`}
+                    key={title}
+                    className="rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 p-5"
                   >
-                    <Icon size={18} strokeWidth={2} />
+                    <div
+                      className={`flex h-10 w-10 items-center justify-center rounded-lg ${iconBg} ${iconColor} mb-3`}
+                    >
+                      <Icon size={18} strokeWidth={2} />
+                    </div>
+                    <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100 mb-1.5">
+                      {title}
+                    </h3>
+                    <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
+                      {description}
+                    </p>
                   </div>
-                  <h3 className="text-[15px] font-semibold text-gray-900 dark:text-gray-100 mb-1.5">
-                    {title}
-                  </h3>
-                  <p className="text-[13px] leading-relaxed text-gray-500 dark:text-gray-400">
-                    {description}
-                  </p>
-                </div>
-              ))}
+                ),
+              )}
             </div>
           </section>
 
@@ -111,7 +113,9 @@ export default function AboutPage() {
                   <p className="text-base font-semibold text-gray-900 dark:text-gray-100">
                     {CREATOR.name}
                   </p>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">{CREATOR.title}</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">
+                    {CREATOR.title}
+                  </p>
                 </div>
               </div>
               <ContactLinks size={16} />
