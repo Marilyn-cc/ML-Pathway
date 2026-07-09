@@ -204,11 +204,7 @@ export default function ResourcesPage() {
       <Sidebar active="Resources" />
 
       <div className="flex-1 flex flex-col min-w-0">
-        <TopBar
-          mode="breadcrumb"
-          crumbs={[{ label: "Resources" }]}
-          showProgressButton
-        />
+        <TopBar mode="breadcrumb" crumbs={[{ label: "Resources" }]} />
 
         <main className="flex-1 px-6 lg:px-10 pb-12">
           {/* Header */}
@@ -221,22 +217,6 @@ export default function ResourcesPage() {
                 Cheat sheets, research papers, and blogs to deepen your ML
                 knowledge.
               </p>
-            </div>
-            <div className="flex items-center gap-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-white dark:bg-gray-900 px-5 py-4 shrink-0">
-              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-brand/10 dark:bg-brand/20 text-brand">
-                <Compass size={18} />
-              </div>
-              <div>
-                <p className="text-sm text-gray-500 dark:text-gray-400">
-                  Total Resources
-                </p>
-                <p className="text-2xl font-bold text-brand leading-tight">
-                  {RESOURCES.length}
-                </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500">
-                  Across all topics
-                </p>
-              </div>
             </div>
           </div>
 
