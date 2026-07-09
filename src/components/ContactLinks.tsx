@@ -1,7 +1,5 @@
 import { Mail, Globe } from "lucide-react";
 import GithubMark from "@/components/GithubMark";
-import LinkedinMark from "@/components/LinkedinMark";
-import XMark from "@/components/XMark";
 import { CREATOR } from "@/lib/creator-config";
 
 type ContactLinksProps = {
@@ -25,18 +23,6 @@ export default function ContactLinks({
       href: CREATOR.github,
       label: "GitHub",
       Icon: GithubMark,
-    },
-    CREATOR.linkedin && {
-      key: "linkedin",
-      href: CREATOR.linkedin,
-      label: "LinkedIn",
-      Icon: LinkedinMark,
-    },
-    CREATOR.x && {
-      key: "x",
-      href: CREATOR.x,
-      label: "X",
-      Icon: XMark,
     },
     CREATOR.website && {
       key: "website",

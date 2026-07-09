@@ -59,11 +59,9 @@ export default function AboutPage() {
               hard to take the first step.
             </p>
             <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-gray-500 dark:text-gray-400">
-              That&apos;s the whole reason ML Pathway exists. I care about
-              beginners specifically — not because the advanced stuff
-              doesn&apos;t matter, but because the hardest part of learning
-              machine learning was never the math. It was figuring out where
-              to click first. So I built the thing I wish I&apos;d had: a
+              That&apos;s the whole reason ML Pathway exists.The hardest part of learning
+              was never the math , It was me trying to  figuring out where
+              to click first. So I built what I wish I&apos;d had: a
               straight line from &quot;I know nothing&quot; to &quot;I just
               trained my first model,&quot; with real notebooks you can run
               the moment you land on the page.
